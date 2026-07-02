@@ -24,4 +24,5 @@ add_executable(parity_test tests/parity_test.cpp
 target_include_directories(parity_test PRIVATE include)
 target_link_libraries(parity_test PRIVATE "${TORCH_LIBRARIES}" GTest::gtest_main)
 include(GoogleTest)
-gtest_discover_tests(parity_test)
+gtest_discover_tests(parity_test
+    WORKING_DIRECTORY ${CMAKE_SOURCE_DIR})
